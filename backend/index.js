@@ -8,12 +8,13 @@ import orderRoutes from './routes/orderRoutes.js';
 import cartRoutes from './routes/cartRoutes.js';
 import reviewRoutes from './routes/reviewRoutes.js';
 import { fileURLToPath } from 'url';
-import path, { dirname } from 'path';
+import { dirname, resolve } from 'path';
 import wishlistRoutes from './routes/wishlistRoutes.js';
 import nodemailer from 'nodemailer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+const parentDir = resolve(__dirname, '..');
 
 // Load environment variables
 dotenv.config();
@@ -35,8 +36,8 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/images', express.static('uploads'));
 
 app.get('/', (req, res) => {
-    app.use(express.static(path.resolve(__dirname, 'frontend', 'dist')));
-    app.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+    app.use(express.static(path.resolve(parentDir, 'frontend', 'dist')));
+    app.sendFile(path.resolve(parentDir, 'frontend', 'dist', 'index.html'));
 });
 
 const transporter = nodemailer.createTransport({

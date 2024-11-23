@@ -45,7 +45,7 @@ function App() {
       {showLogin ? <LoginPopup setShowLogin={setShowLogin} setShowVerify={setShowVerify} data={data} setData={setData} setShowUpdatePassword={setShowUpdatePassword} /> : <></>}
       {showUpdatePassword ? <UpdatePassword setShowUpdatePassword={setShowUpdatePassword} setShowNewPassword={setShowNewPassword} data={data} setData={setData} /> : <></>}
       {showNewPassword ? <NewPassword setShowNewPassword={setShowNewPassword} data={data} setData={setData} /> : <></>}
-      {showAddress ?  <AddAddress setShowAddress={setShowAddress} />:<></>}
+      {showAddress ? <AddAddress setShowAddress={setShowAddress} /> : <></>}
       <div>
         <Navbar setShowLogin={setShowLogin} />
         <Routes>
