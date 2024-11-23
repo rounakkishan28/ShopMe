@@ -2,7 +2,7 @@ import Stripe from 'stripe';
 import Order from '../models/Order.js';
 import User from '../models/User.js';
 
-const stripe = new Stripe("sk_test_51PzgVNSBRlQeDXiDfztGdC9fnxXz2nKiBqfQDFro4uFoEwQwkk4DN8zKkHWAk7U2ykwmCDcLoFpDWRVzFpEZ3nBO0076kvtkF2");
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 // Create a new order
 const createOrder = async (req, res) => {
