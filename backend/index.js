@@ -37,7 +37,7 @@ app.use('/images', express.static('uploads'));
 
 app.get('/', (req, res) => {
     app.use(express.static(resolve(parentDir, 'frontend', 'dist')));
-    app.sendFile(resolve(parentDir, 'frontend', 'dist', 'index.html'));
+    res.sendFile(resolve(parentDir, 'frontend', 'dist', 'index.html'));
 });
 
 const transporter = nodemailer.createTransport({
