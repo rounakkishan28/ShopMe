@@ -36,8 +36,8 @@ app.use('/api/reviews', reviewRoutes);
 app.use('/images', express.static('uploads'));
 
 app.get('/', (req, res) => {
-    app.use(express.static(path.resolve(parentDir, 'frontend', 'dist')));
-    app.sendFile(path.resolve(parentDir, 'frontend', 'dist', 'index.html'));
+    app.use(express.static(resolve(parentDir, 'frontend', 'dist')));
+    app.sendFile(resolve(parentDir, 'frontend', 'dist', 'index.html'));
 });
 
 const transporter = nodemailer.createTransport({
