@@ -18,7 +18,7 @@ const createOrder = async (req, res) => {
         res.status(400).json({ success: false, message: 'No order items' });
     }
 
-    const frontend_url = 'http://localhost:5173';
+    const frontend_url = 'https://shop-me-gj75.vercel.app';
 
     const order = new Order({
         user: req.user,
