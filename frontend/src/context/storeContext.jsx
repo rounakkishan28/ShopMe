@@ -11,7 +11,7 @@ const StoreContextProvider = (props) => {
     const [token, setToken] = useState("");
     const [productList, setProductList] = useState([]);
 
-    const url = "https://shop-me-virid.vercel.app";
+    const url = "https://shopme-w7oh.onrender.com";
 
     const addToCart = async (itemId) => {
         const updatedCartItems = {
